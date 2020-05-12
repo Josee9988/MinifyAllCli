@@ -17,13 +17,20 @@ export function showHelp(): void {
     console.log(`\n${chalk.bold('Usage')}: minifyall ${chalk.magenta('[file] [options]\n')}`);
 
     console.log(chalk.bold('Global options:\n'));
-    console.log('  -h, --help\t\t  Output usage information. (will ignore all other arguments)');
-    console.log('  -v, --version\t\t  Output package version. (will ignore all other arguments)');
+    console.log('  -h, --help\t\t  Output usage information. (will ignore any other arguments)');
+    console.log('  -v, --version\t\t  Output package version. (will ignore any other arguments)');
+    console.log('  -m, --minify-hex\t\t  Will minify the hexadecimal color values. (default = false)');
+    console.log('  -s, --suffix\t\t  The string of the suffix file. (default = "-min")');
+    console.log('  -o, --output\t\t  The new output file (will ignore "--suffix" argument)');
+
 
     console.log(chalk.bold('\nExamples of use:'));
     console.log('  minifyall --help');
     console.log('  minifyall --version');
     console.log('  minifyall myFile.css');
+    console.log('  minifyall myFile.css -m -s .min');
+    console.log('  minifyall myFile.css --minify-hex -s -minified');
+    console.log('  minifyall myFile.css -o myNewFile.css');
 
     console.log(`\nFor more information visit: ${chalk.bold('https://github.com/Josee9988/MinifyAllCli')}`);
 }
