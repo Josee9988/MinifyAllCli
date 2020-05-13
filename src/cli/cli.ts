@@ -1,7 +1,6 @@
 import {showHelp, showVersion} from './informationCLI';
 import {ArgumentsOptions, parseArgumentsIntoOptions} from "./argumentParser";
-import Chalk from 'chalk';
-import {createFile, getNewFilePath, readFileContent} from "../controller/fileController";
+import {createFile, readFileContent} from "../controller/fileController";
 import {displayException} from "./displayException";
 import {detectLanguageAndMinify} from "../index";
 
@@ -12,7 +11,7 @@ import {detectLanguageAndMinify} from "../index";
  *
  * @param rawArgs arguments directly given by the user.
  */
-export function startCommand(rawArgs: string[]) {
+export async function startCommand(rawArgs: string[]): void {
     let options: ArgumentsOptions;
     try {
         options = parseArgumentsIntoOptions(rawArgs);
@@ -21,10 +20,9 @@ export function startCommand(rawArgs: string[]) {
     }
 
     if (!options.help && !options.version) { // OK
-        const content: string[] = readFileContent(options.file);
-        console.log('content: ' + content);
+        const content: string[] = await readFileContent(options.file);
         const minifiedCode = detectLanguageAndMinify(options.file, content, options.minifyHex);
-        console.log(createFile(options.file, minifiedCode, options.suffix));
+        createFile(options.file, minifiedCode, options.suffix);
     } else if (options.help) { // if the user specified help
         showHelp();
     } else if (options.version) { // if the user specified version

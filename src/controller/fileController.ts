@@ -2,15 +2,16 @@ import fs from 'fs';
 import {displayException} from "../cli/displayException";
 import Chalk from "chalk";
 
-export function readFileContent(path: string): string[] | null {
-    // read file from file system
-    fs.readFile(path, (err, data) => {
-        if (err) { // error found
-            displayException(402, 'could not read file', err.toString());
-        }
-        return data.toString().split("\n"); // ok
+export function readFileContent(path: string): Promise<string[]> {
+    return new Promise((resolve, reject) => {
+        fs.readFile(path, "utf8", function (err, data) {
+            if (err) { // error found
+                reject(err);
+                displayException(402, 'could not read file', err.toString());
+            }
+            resolve(data.toString().split("\n"));
+        });
     });
-    return null;
 }
 
 export function createFile(path: string, content: string, suffix: string): void {
@@ -18,7 +19,8 @@ export function createFile(path: string, content: string, suffix: string): void 
         if (err) {
             displayException(402, 'could not create new file', err.toString());
         }
-        console.log(`${Chalk.bgGreen('SUCCESS!')} You can find your new minified file at: ${Chalk.bold(path)}`);
+        console.log(`\n${Chalk.bgGreen('            ')}\n${Chalk.bgGreen.bold.gray('  SUCCESS!  ')}\n${Chalk.bgGreen('            ')}`);
+        console.log(`You can find your new minified file at: ${Chalk.bold.yellow.underline(getNewFilePath(path, suffix))}`);
     });
 }
 

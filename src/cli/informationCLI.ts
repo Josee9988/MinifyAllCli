@@ -3,8 +3,8 @@ import Chalk from 'chalk';
 /**
  * Summary: showVersion outputs the version of the package.
  */
-export function showVersion() {
-    console.log(Chalk.bold.gray('0.0.0'));
+export function showVersion(): void {
+    console.log(Chalk.bold.gray('1.0.0'));
 }
 
 /**
@@ -12,7 +12,7 @@ export function showVersion() {
  * it outputs all the global options, usage, hints and examples of use.
  */
 export function showHelp(): void {
-    console.log(Chalk.green('\nMinifyAllCli') + Chalk.gray(` v0.0.0`));
+    console.log(Chalk.green('\nMinifyAllCli') + Chalk.gray(` v1.0.0`));
 
     console.log(`\n${Chalk.bold('Usage')}: ${Chalk.yellow('minifyall')} ${Chalk.magenta('[file] [options]\n')}`);
 
