@@ -24,7 +24,6 @@ export function showHelp(): void {
     console.log('  -o, --output\t\t  The new output file (will ignore "--suffix" argument)');
     console.log('  -d, --dir\t\t  Will recursively look for HTML/CSS/JSON files inside a directory and will minify every one (will ignore "--output" argument)');
 
-
     console.log(Chalk.bold('\nExamples of use:'));
     console.log('  minifyall --help');
     console.log('  minifyall --version');

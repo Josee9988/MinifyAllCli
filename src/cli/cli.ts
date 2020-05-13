@@ -22,7 +22,7 @@ export async function startCommand(rawArgs: string[]): Promise<void> {
         if (!options.directory) { // minify normal file (not directory)
             await minifyAndWriteNewFile(options.file, options.minifyHex, options.suffix);
         } else { // minify directory
-            for (let file of findFilesInDir(options.directory)) { // every file found
+            for (const file of findFilesInDir(options.directory)) { // every file found
                 await minifyAndWriteNewFile(file, options.minifyHex, options.suffix);
             }
         }
