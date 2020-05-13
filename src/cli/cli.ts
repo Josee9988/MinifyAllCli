@@ -20,7 +20,7 @@ export async function startCommand(rawArgs: string[]): Promise<void> {
     }
     if (!options.help && !options.version) { // OK
         if (!options.directory) { // minify normal file (not directory)
-            await minifyAndWriteNewFile(options.file, options.minifyHex, options.suffix);
+            await minifyAndWriteNewFile(options.file, options.minifyHex, options.suffix, options.output ? options.output : options.file);
         } else { // minify directory
             for (const file of findFilesInDir(options.directory)) { // every file found
                 await minifyAndWriteNewFile(file, options.minifyHex, options.suffix);
@@ -33,8 +33,8 @@ export async function startCommand(rawArgs: string[]): Promise<void> {
     }
 }
 
-export async function minifyAndWriteNewFile(file: string, minifyHex: boolean, suffix: string) {
+export async function minifyAndWriteNewFile(file: string, minifyHex: boolean, suffix: string, newFilePath: string = file) {
     const content: string[] = await readFileContent(file);
     const minifiedCode = detectLanguageAndMinify(file, content, minifyHex);
-    createFile(file, minifiedCode, suffix);
+    createFile(newFilePath, minifiedCode, newFilePath!==file ? '' : suffix);
 }
