@@ -1,45 +1,28 @@
-import arg from 'arg';
 import {showHelp, showVersion} from './informationCLI';
+import {ArgumentsOptions, parseArgumentsIntoOptions} from "./argumentParser";
+import Chalk from 'chalk';
 
+/**
+ * First function called when the user executes the CLI command.
+ * It receives and parses the arguments and calls the appropriate function
+ * to continue with the command execution.
+ *
+ * @param rawArgs arguments directly given by the user.
+ */
 export function startCommand(rawArgs: string[]) {
-    const options = parseArgumentsIntoOptions(rawArgs);
-    if (!options.help && !options.version) {
+    let options: ArgumentsOptions;
+    try{
+        options = parseArgumentsIntoOptions(rawArgs);
+    }catch (e) { // if the arguments passed are not right
+        showHelp();
+        console.error(`\n${Chalk.bold.red('ERROR: ')}your arguments: are wrong.`);
+        console.error(`\n${Chalk.bold.cyan.underline('Node stacktrace')}: \n${e}`);
+    }
+    if (!options.help && !options.version) { // OK
         console.log(options);
     } else if (options.help) { // if the user specified help
         showHelp();
     } else if (options.version) { // if the user specified version
         showVersion();
     }
-}
-
-/**
- * Summary: parseArgumentsIntoOptions receives the raw arguments given by
- * the user and transform them into an object that will be returned.
- *
- * @param rawArgs arguments directly given by the user.
- * @return options as a JavaScript object.
- */
-export function parseArgumentsIntoOptions(rawArgs: string[]) {
-    const args = arg({
-        '--help': Boolean,
-        '--version': Boolean,
-        '--minify-hex': Boolean,
-        '--suffix': String,
-        '--output': String,
-        '-h': '--help',
-        '-v': '--version',
-        '-m': '--minify-hex',
-        '-s': '--suffix',
-        '-o': '--output',
-    }, {
-        argv: rawArgs.slice(2),
-    });
-    return {
-        help: args['--help'] || false,
-        version: args['--version'] || false,
-        minifyHex: args['--minify-hex'] || false,
-        suffix: args['--suffix'] || '-min',
-        output: args['--output'] || null,
-        file: args._[0],
-    };
 }
