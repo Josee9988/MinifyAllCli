@@ -1,6 +1,8 @@
 import {showHelp, showVersion} from './informationCLI';
 import {ArgumentsOptions, parseArgumentsIntoOptions} from "./argumentParser";
 import Chalk from 'chalk';
+import {readFileContent} from "../controller/fileController";
+import {displayException} from "./displayException";
 
 /**
  * First function called when the user executes the CLI command.
@@ -11,14 +13,14 @@ import Chalk from 'chalk';
  */
 export function startCommand(rawArgs: string[]) {
     let options: ArgumentsOptions;
-    try{
+    try {
         options = parseArgumentsIntoOptions(rawArgs);
-    }catch (e) { // if the arguments passed are not right
-        showHelp();
-        console.error(`\n${Chalk.bold.red('ERROR: ')}your arguments: are wrong.`);
-        console.error(`\n${Chalk.bold.cyan.underline('Node stacktrace')}: \n${e}`);
+    } catch (e) { // if the arguments passed are not right
+        displayException(400, 'your arguments are wrong', e);
     }
+
     if (!options.help && !options.version) { // OK
+        readFileContent(options.file);
         console.log(options);
     } else if (options.help) { // if the user specified help
         showHelp();
