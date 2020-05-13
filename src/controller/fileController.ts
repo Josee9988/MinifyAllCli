@@ -12,11 +12,16 @@ export function readFileContent(path: string): string[] | null {
     return null;
 }
 
-export function createFile(path: string, content: string) {
-    fs.writeFile(path, content, function (err) {
+export function createFile(path: string, content: string, suffix: string) {
+    fs.writeFile(getNewFilePath(path, suffix), content, function (err) {
         if (err) {
             displayException(402, 'could not create new file', err.toString());
         }
         console.log("File created!");
     });
 }
+
+export function getNewFilePath(path: string, suffix: string): string {
+    return path.slice(0, path.lastIndexOf('.')) + suffix + path.slice(path.lastIndexOf('.'));
+}
+

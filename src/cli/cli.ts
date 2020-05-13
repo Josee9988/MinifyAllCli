@@ -1,7 +1,7 @@
 import {showHelp, showVersion} from './informationCLI';
 import {ArgumentsOptions, parseArgumentsIntoOptions} from "./argumentParser";
 import Chalk from 'chalk';
-import {readFileContent} from "../controller/fileController";
+import {createFile, getNewFilePath, readFileContent} from "../controller/fileController";
 import {displayException} from "./displayException";
 
 /**
@@ -20,7 +20,9 @@ export function startCommand(rawArgs: string[]) {
     }
 
     if (!options.help && !options.version) { // OK
-        readFileContent(options.file);
+        const content: string[] = readFileContent(options.file);
+
+        //console.log(createFile(options.file, , options.suffix));
         console.log(options);
     } else if (options.help) { // if the user specified help
         showHelp();
