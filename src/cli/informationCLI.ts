@@ -30,7 +30,7 @@ export function showHelp(): void {
     console.log('  minifyall myFile.css');
     console.log('  minifyall myFile.css -m -s .min');
     console.log('  minifyall myFile.css --minify-hex -s -minified');
-    console.log('  minifyall myFile.css -o myNewFile.css');
+    console.log('  minifyall myFile.css --output someFolder/myNewFile.css');
     console.log('  minifyall --dir myFolder/');
 
     console.log(`\nFor more information visit: ${Chalk.bold('https://github.com/Josee9988/MinifyAllCli')}`);
