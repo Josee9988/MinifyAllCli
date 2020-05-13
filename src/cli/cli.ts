@@ -20,9 +20,16 @@ export async function startCommand(rawArgs: string[]): void {
     }
 
     if (!options.help && !options.version) { // OK
-        const content: string[] = await readFileContent(options.file);
-        const minifiedCode = detectLanguageAndMinify(options.file, content, options.minifyHex);
-        createFile(options.file, minifiedCode, options.suffix);
+
+        if (!options.directory) { // minify normal file (not directory)
+            const content: string[] = await readFileContent(options.file);
+            const minifiedCode = detectLanguageAndMinify(options.file, content, options.minifyHex);
+            createFile(options.file, minifiedCode, options.suffix);
+        } else { // minify directory
+
+        }
+
+
     } else if (options.help) { // if the user specified help
         showHelp();
     } else if (options.version) { // if the user specified version

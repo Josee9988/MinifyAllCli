@@ -22,6 +22,7 @@ export function showHelp(): void {
     console.log('  -m, --minify-hex\t\t  Will minify the hexadecimal color values. (default = false)');
     console.log('  -s, --suffix\t\t  The string of the suffix file. (default = "-min")');
     console.log('  -o, --output\t\t  The new output file (will ignore "--suffix" argument)');
+    console.log('  -d, --dir\t\t  Will recursively look for HTML/CSS/JSON files inside a directory and will minify every one (will ignore "--output" argument)');
 
 
     console.log(Chalk.bold('\nExamples of use:'));
@@ -31,6 +32,7 @@ export function showHelp(): void {
     console.log('  minifyall myFile.css -m -s .min');
     console.log('  minifyall myFile.css --minify-hex -s -minified');
     console.log('  minifyall myFile.css -o myNewFile.css');
+    console.log('  minifyall --dir myFolder/');
 
     console.log(`\nFor more information visit: ${Chalk.bold('https://github.com/Josee9988/MinifyAllCli')}`);
 }

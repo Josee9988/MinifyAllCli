@@ -10,6 +10,7 @@ export interface ArgumentsOptions {
     suffix: string,
     output: string | null,
     file: string | null;
+    directory: string | null;
 }
 
 /**
@@ -26,11 +27,13 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): ArgumentsOptions {
         '--minify-hex': Boolean,
         '--suffix': String,
         '--output': String,
+        '--dir': String,
         '-h': '--help',
         '-v': '--version',
         '-m': '--minify-hex',
         '-s': '--suffix',
         '-o': '--output',
+        '-d': '--dir',
     }, {
         argv: rawArgs.slice(2),
     });
@@ -40,6 +43,7 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): ArgumentsOptions {
         minifyHex: args['--minify-hex'] || false,
         suffix: args['--suffix'] || '-min',
         output: args['--output'] || null,
+        directory: args['--dir'] || null,
         file: args._[0],
     };
 }
