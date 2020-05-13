@@ -3,6 +3,7 @@ import {ArgumentsOptions, parseArgumentsIntoOptions} from "./argumentParser";
 import Chalk from 'chalk';
 import {createFile, getNewFilePath, readFileContent} from "../controller/fileController";
 import {displayException} from "./displayException";
+import {detectLanguageAndMinify} from "../index";
 
 /**
  * First function called when the user executes the CLI command.
@@ -21,9 +22,9 @@ export function startCommand(rawArgs: string[]) {
 
     if (!options.help && !options.version) { // OK
         const content: string[] = readFileContent(options.file);
-
-        //console.log(createFile(options.file, , options.suffix));
-        console.log(options);
+        console.log('content: ' + content);
+        const minifiedCode = detectLanguageAndMinify(options.file, content, options.minifyHex);
+        console.log(createFile(options.file, minifiedCode, options.suffix));
     } else if (options.help) { // if the user specified help
         showHelp();
     } else if (options.version) { // if the user specified version

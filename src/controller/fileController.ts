@@ -1,5 +1,6 @@
 import fs from 'fs';
 import {displayException} from "../cli/displayException";
+import Chalk from "chalk";
 
 export function readFileContent(path: string): string[] | null {
     // read file from file system
@@ -12,12 +13,12 @@ export function readFileContent(path: string): string[] | null {
     return null;
 }
 
-export function createFile(path: string, content: string, suffix: string) {
+export function createFile(path: string, content: string, suffix: string): void {
     fs.writeFile(getNewFilePath(path, suffix), content, function (err) {
         if (err) {
             displayException(402, 'could not create new file', err.toString());
         }
-        console.log("File created!");
+        console.log(`${Chalk.bgGreen('SUCCESS!')} You can find your new minified file at: ${Chalk.bold(path)}`);
     });
 }
 
