@@ -6,7 +6,7 @@
  * from 'src/' and requires 'esm'. Do not touch this file unless you know
  * what you are doing.
  *
- * @author Jose Gracia Berenguer
+ * @author @Josee9988
  * @since 1.0.0.
  * @link https://github.com/Josee9988/MinifyAllCli repository.
  * @link https://github.com/Josee9988/MinifyAllCli/issues issues or enhancements.

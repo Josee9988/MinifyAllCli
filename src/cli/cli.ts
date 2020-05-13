@@ -41,7 +41,7 @@ export async function startCommand(rawArgs: string[]): Promise<void> {
  * @param suffix the suffix given.
  * @param newFilePath if the user specified the output argument, if so, it will replace the original filePath.
  */
-export async function minifyAndWriteNewFile(filePath: string, willMinifyHex: boolean, suffix: string, newFilePath: string = filePath) {
+export async function minifyAndWriteNewFile(filePath: string, willMinifyHex: boolean, suffix: string, newFilePath: string = filePath): void {
     const content: string[] = await readFileContent(filePath);
     const minifiedCode = detectLanguageAndMinify(filePath, content, willMinifyHex);
     createFile(newFilePath, minifiedCode, newFilePath !== filePath ? '' : suffix);

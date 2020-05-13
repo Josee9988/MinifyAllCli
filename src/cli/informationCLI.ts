@@ -9,7 +9,7 @@ export function showVersion(): void {
 
 /**
  * Summary: showHelp shows the help for the package 'minifyall'
- * it outputs all the global options, usage, hints and examples of use.
+ * it outputs all the global options, usage, hints and some examples of use.
  */
 export function showHelp(): void {
     console.log(Chalk.green('\nMinifyAllCli') + Chalk.gray(` v1.0.0`));

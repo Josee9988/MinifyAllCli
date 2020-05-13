@@ -5,7 +5,7 @@ import {HtmlMinifier} from './langDefaultMinifiers/htmlMinifier';
 import {JsonMinifier} from './langDefaultMinifiers/jsonMinifier';
 
 /**
- * GlobalMinifiers contain functions that are used by multiple languages to be minifized.
+ * GlobalMinifiers contain functions that are used by multiple languages to be minified.
  */
 export class GlobalMinifierClass {
     constructor(private willMinifyHex: boolean) {
