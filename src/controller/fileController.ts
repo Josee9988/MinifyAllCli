@@ -3,6 +3,11 @@ import {displayException} from "../cli/displayException";
 import Chalk from "chalk";
 import path from "path";
 
+/**
+ * Reads the content of a file.
+ *
+ * @param givenPath the path to the file to be read.
+ */
 export function readFileContent(givenPath: string): Promise<string[]> {
     return new Promise((resolve, reject) => {
         fs.readFile(givenPath, "utf8", (err, data) => {
@@ -15,17 +20,30 @@ export function readFileContent(givenPath: string): Promise<string[]> {
     });
 }
 
+/**
+ * Creates a new file with the given content.
+ *
+ * @param givenPath the path to be created.
+ * @param content the content of the new file.
+ * @param suffix the suffix to be added to the new file name.
+ */
 export function createFile(givenPath: string, content: string, suffix: string): void {
-    fs.writeFile(getNewFilePath(givenPath, suffix), content, err => {
+    fs.writeFile(getNewFileName(givenPath, suffix), content, err => {
         if (err) {
             displayException(402, 'could not create new file', err.toString());
         }
         console.log(`${Chalk.bgGreen.bold.gray('SUCCESS!')}`);
-        console.log(`You can find your new minified file at: ${Chalk.bold.yellow.underline(getNewFilePath(givenPath, suffix))}\n`);
+        console.log(`You can find your new minified file at: ${Chalk.bold.yellow.underline(getNewFileName(givenPath, suffix))}\n`);
     });
 }
 
-export function getNewFilePath(givenPath: string, suffix: string): string {
+/**
+ * Obtains the new file name by adding the given suffix.
+ *
+ * @param givenPath the original path with the file path included.
+ * @param suffix the given suffix to be added in the new file name.
+ */
+export function getNewFileName(givenPath: string, suffix: string): string {
     return givenPath.slice(0, givenPath.lastIndexOf('.')) + suffix + givenPath.slice(givenPath.lastIndexOf('.'));
 }
 
