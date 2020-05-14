@@ -15,7 +15,8 @@ export function detectLanguageAndMinify(path: string, content: string[], willMin
             return minifier.minifyHtml(content);
         case LanguagesEnum.CSS:
             return minifier.minifyCssScssLessSass(content);
-        case LanguagesEnum.JSON: case LanguagesEnum.JSONC:
+        case LanguagesEnum.JSON:
+        case LanguagesEnum.JSONC:
             return minifier.minifyJsonJsonc(content);
         default:
             displayException(402, 'file extension not recognized', path);
