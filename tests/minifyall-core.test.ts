@@ -1,5 +1,5 @@
 /**
- * @file minifyall.test.ts file that contains all the tests to the core of Minifyall.
+ * @file minifyall-core.test.ts file that contains all the tests to the core of Minifyall.
  * Mainly based on the already built tests from the original MinifyAll VSCode extension.
  */
 

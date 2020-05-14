@@ -18,7 +18,9 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "start": "node dist/index.js",
-    "test": "jest"
+    "test": "jest",
+    "refresh": "rm -R dist/ && rm -R node_modules/ && npm i && npm run build",
+    "testPack": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
   },
   "repository": {
     "type": "git",

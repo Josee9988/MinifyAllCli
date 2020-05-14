@@ -1,5 +1,9 @@
+# Folders
 src/
-tsconfig.json
-tslint.json
 .idea/
 .testFiles/
+tests/
+
+# Files
+tsconfig.json
+tslint.json
