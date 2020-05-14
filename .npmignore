@@ -1,5 +1,8 @@
+# Folders
 src/
+.idea/
+tests/
+
+# Files
 tsconfig.json
 tslint.json
-.idea/
-.testFiles/

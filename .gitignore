@@ -1,4 +1,6 @@
+# Folders
 node_modules/
 .idea/
 dist/
-.testFiles/
+
+# Files
