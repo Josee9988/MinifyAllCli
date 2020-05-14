@@ -61,7 +61,7 @@ export function findFilesInDir(startPath: string): string[] {
         // if it's a directory and it is node_modules and .git
         if (stat.isDirectory() && !filename.match(/node_modules/g) && !filename.match(/.git/g)) {
             results = results.concat(findFilesInDir(filename)); // recurse
-        } else if (filename.indexOf('.html') >= 0 || filename.indexOf('.css') >= 0 || filename.indexOf('.json') >= 0) {
+        } else if (filename.indexOf('.html') >= 0 || filename.indexOf('.css') >= 0 || filename.indexOf('.json') >= 0 || filename.indexOf('.jsonc') >= 0) {
             results.push(filename);
         }
     }

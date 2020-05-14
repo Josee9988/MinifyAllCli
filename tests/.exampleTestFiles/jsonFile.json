@@ -1,0 +1,11 @@
+{
+  "contributes": {
+    "commands": [{
+      "title": "Minify this document ⚡"
+    },
+      {
+        "color": "#FAFAFA"
+      }
+    ]
+  }
+}
