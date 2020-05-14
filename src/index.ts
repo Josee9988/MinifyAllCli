@@ -42,5 +42,5 @@ enum LanguagesEnum {
     /**
      * Jsonc language
      */
-    JSONC = '.json',
+    JSONC = '.jsonc',
 }
