@@ -17,7 +17,8 @@
     "watch": "tsc -watch",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,9 @@
     "minify",
     "minifier"
   ],
+  "jest": {
+    "preset": "ts-jest"
+  },
   "author": "@Josee9988",
   "license": "MIT",
   "bugs": {
@@ -40,7 +44,10 @@
   },
   "homepage": "https://github.com/Josee9988/MinifyAllCli#readme",
   "devDependencies": {
+    "@types/jest": "^25.2.2",
     "@types/node": "^14.0.1",
+    "jest": "^25.0.1",
+    "ts-jest": "^25.5.1",
     "tslint": "^6.1.2",
     "typescript": "^3.9.2"
   },
