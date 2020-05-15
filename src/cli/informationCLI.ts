@@ -28,6 +28,7 @@ export function showHelp(): void {
     console.log('  minifyall --help');
     console.log('  minifyall --version');
     console.log('  minifyall myFile.css');
+    console.log('  minifyall pathToMyFile/dirs/myFile.css')
     console.log('  minifyall myFile.css -m -s .min');
     console.log('  minifyall myFile.css --minify-hex -s -minified');
     console.log('  minifyall myFile.css --output someFolder/myNewFile.css');

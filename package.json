@@ -18,8 +18,9 @@
     "watch": "tsc -watch",
     "lint": "tslint -p tsconfig.json",
     "start": "node dist/index.js",
-    "test": "jest",
-    "posttest": "rm tests/.exampleTestFiles/testFile.min.css",
+    "pretest": "rm tests/.exampleTestFiles/testFile.min.css || true",
+    "test": "jest || :",
+    "posttest": "rm tests/.exampleTestFiles/testFile.min.css || true",
     "removeExtraExampleTestFiles": "cd tests/.exampleTestFiles && rm -v !('jsonCFile.jsonc'|'jsonFile.json'|'styles.css'|'myWebpage.html') && cd ../..",
     "refresh": "rm -R dist/ && rm -R node_modules/ && npm i && npm run build",
     "testPack": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
