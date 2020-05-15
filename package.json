@@ -18,13 +18,14 @@
     "watch": "tsc -watch",
     "lint": "tslint -p tsconfig.json",
     "start": "node dist/index.js",
-    "pretest": "rm tests/.exampleTestFiles/testFile.min.css || true",
+    "pretest": "rm tests/.exampleTestFiles/testFile.min.css || :",
     "test": "jest || :",
-    "posttest": "rm tests/.exampleTestFiles/testFile.min.css || true",
+    "posttest": "rm tests/.exampleTestFiles/testFile.min.css || :",
     "removeExtraExampleTestFiles": "cd tests/.exampleTestFiles && rm -v !('jsonCFile.jsonc'|'jsonFile.json'|'styles.css'|'myWebpage.html') && cd ../..",
     "refresh": "rm -R dist/ && rm -R node_modules/ && npm i && npm run build",
     "testPack": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
   },
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Josee9988/MinifyAllCli.git"

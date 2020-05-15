@@ -7,7 +7,9 @@ It also supports **minifying an entire directory recursively** (finding the avai
 you could also change the **suffix** of the new minified file (by default "-min"),
 toggle the minimization of **RGB**/**HEX** values and _much more_! 
 
-MinifyAll uses **regex** as its main and only minimization tool, that will lead to impressive minify times compared to other minifiers that deeply analyze the code.
+Use it as a **CLI command** or as a **normal package**!
+
+MinifyAll uses **regex** as its main and only minimization tool, that will lead to **impressive minify times** compared to other minifiers that deeply analyze the code.
 
 Check the **[website](https://minifyall.jgracia.es/)** or the original **[VSCode extension](https://github.com/Josee9988/MinifyAll)**.
 
@@ -46,9 +48,9 @@ npm i @josee9988/minifyall --save-dev # install the package globally
 
 ## **Usage**
 
-  ### **CLI usage**
+### **CLI usage**
   
-  **`minifyall --help`** or **`minifyall --help`** will output:
+**`minifyall --help`** or **`minifyall --help`** will output:
   
   ```
 MinifyAllCli v1.0.0
@@ -77,9 +79,27 @@ Examples of use:
 For more information visit: https://github.com/Josee9988/MinifyAllCli
   ```
 
-  ### **Package usage**
+### **Package usage**
   
-  [] Todo package usage
+1. Import the package.
+  
+      ```typescript
+    import {MinifyAllClass} from '@josee9988/minifyall/dist/index.js'; // import it
+      ```
+
+2. Initialize the minifier.
+  
+    ```typescript
+    const minifyall: MinifyAllClass = new MinifyAllClass(false); // initialize the class (true for minifying color values such as HEXADECIMAL/RGB/RGBA)
+    ```
+    
+3. Use the minifier by passing the function your array of strings (: string[]) with your non minified code.
+    
+    ```typescript
+    const minifiedHtmlCode: string = minifyall.minifyHtml(HTMLNotMinified); // html
+    const minifiedCssCode: string = minifyall.minifyCssScssLessSass(CSSNotMinified); // css
+    const minifiedJsonCode: string = minifyall.minifyJsonJsonc(JSONNotMinified); // json/c
+    ```
 
 ---
 

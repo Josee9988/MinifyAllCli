@@ -13,7 +13,7 @@ export function readFileContent(givenPath: string): Promise<string[]> {
         fs.readFile(givenPath, "utf8", (err, data) => {
             if (err) { // error found
                 reject(err);
-                displayException(402, 'could not read file', err.toString());
+                displayException(404, 'could not read file '+givenPath, err.toString());
             }
             resolve(data.toString().split("\n"));
         });
@@ -30,7 +30,7 @@ export function readFileContent(givenPath: string): Promise<string[]> {
 export function createFile(givenPath: string, content: string, suffix: string): void {
     fs.writeFile(getNewFileName(givenPath, suffix), content, err => {
         if (err) {
-            displayException(402, 'could not create new file', err.toString());
+            displayException(402, 'could not create new file '+givenPath, err.toString());
         }
         console.log(`${Chalk.bgGreen.bold.gray('SUCCESS!')}`);
         console.log(`You can find your new minified file at: ${Chalk.bold.yellow.underline(getNewFileName(givenPath, suffix))}\n`);

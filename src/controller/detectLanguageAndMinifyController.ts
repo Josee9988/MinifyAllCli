@@ -19,7 +19,7 @@ export function detectLanguageAndMinify(path: string, content: string[], willMin
         case LanguagesEnum.JSONC:
             return minifier.minifyJsonJsonc(content);
         default:
-            displayException(402, 'file extension not recognized', path);
+            displayException(403, 'file extension not recognized', path);
             break;
     }
 }
