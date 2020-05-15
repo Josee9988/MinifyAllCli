@@ -10,9 +10,9 @@
  */
 
 /**
- * HexMinifier minifies hexadecimal values.
+ * HexMinifier minifies HEXADECIMAL/RGB/A values.
  */
-export class HexMinifier {
+export class ColorMinifier {
     /**
      * Summary Minifier constructor that maps and trims the code.
      *
@@ -35,8 +35,7 @@ export class HexMinifier {
             if (hexadecimal !== null && hexadecimal.toString().length === 7) {
                 const hexadecimalString: string = hexadecimal.toString();
                 const shortHex: string = this.getShortHexColorCode(hexadecimalString);
-                const newShortString: string = this.cssContent[i].replace(hexadecimalString, shortHex);
-                this.cssContent[i] = newShortString;
+                this.cssContent[i] = this.cssContent[i].replace(hexadecimalString, shortHex);
             }
         }
     }
@@ -56,8 +55,7 @@ export class HexMinifier {
                 const rgbString: string = rgb.toString();
                 const result: any = this.rgbArrayToObject(rgbString);
                 const shortHex: string = this.rgbToShortHex(result);
-                const newShortString: string = this.cssContent[i].replace(rgbString, shortHex);
-                this.cssContent[i] = newShortString;
+                this.cssContent[i] = this.cssContent[i].replace(rgbString, shortHex);
             }
         }
     }
@@ -78,9 +76,8 @@ export class HexMinifier {
                 const percent: RegExpMatchArray | null = rgbaString.match(/[%]/g);
                 if (percent === null) {
                     const result: string = this.rgba2hex(rgbaString);
-                    const newShortString: string = this.cssContent[i].replace(rgbaString,
+                    this.cssContent[i] = this.cssContent[i].replace(rgbaString,
                         result.toString().toUpperCase());
-                    this.cssContent[i] = newShortString;
                 }
             }
         }

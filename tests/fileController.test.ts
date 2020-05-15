@@ -17,8 +17,8 @@ test('GetNewFileName works', () => {
     expect(result4).toStrictEqual('/usr/local/etc/myCssFile.subName.css');
 });
 
-test('FindFilesInDir works', () => {
-    const result: string[] = findFilesInDir(path.join(__dirname, '/../', 'tests/.exampleTestFiles/'));
+test('FindFilesInDir works', async() => {
+    const result: string[] = await findFilesInDir(path.join(__dirname, '/../', 'tests/.exampleTestFiles/'));
     expect(result).toStrictEqual([
         path.join(__dirname, '/../', 'tests/.exampleTestFiles/', 'jsonCFile.jsonc'),
         path.join(__dirname, '/../', 'tests/.exampleTestFiles/', 'jsonFile.json'),

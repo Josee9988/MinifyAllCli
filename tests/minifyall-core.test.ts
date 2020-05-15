@@ -4,10 +4,10 @@
  */
 
 import {MinifyAllClass} from "../src";
-import {HexMinifier} from "../src/controller/hexMinifier";
-import {CssMinifier} from "../src/controller/langDefaultMinifiers/cssMinifier";
-import {HtmlMinifier} from "../src/controller/langDefaultMinifiers/htmlMinifier";
-import {JsonMinifier} from "../src/controller/langDefaultMinifiers/jsonMinifier";
+import {ColorMinifier} from "../src/controller/colorMinifierController";
+import {CssMinifier} from "../src/controller/langMinifiers/cssMinifier";
+import {HtmlMinifier} from "../src/controller/langMinifiers/htmlMinifier";
+import {JsonMinifier} from "../src/controller/langMinifiers/jsonMinifier";
 
 test('CSS main Minify with color minimization (/controller/globalMinifiers', () => {
     const minifier: MinifyAllClass = new MinifyAllClass(true);
@@ -28,7 +28,7 @@ test('JSON main Minify (/controller/globalMinifiers.js)', () => {
 });
 
 test('Hexadecimal Minify (controller/hexMinifier.js)', () => {
-    const minifierHex: HexMinifier = new HexMinifier(['background-color: rgba(12, 12, 12, 0.8);', 'background-color: rgb(12, 12, 12);', 'background-color: #FAFAFA;'],);
+    const minifierHex: ColorMinifier = new ColorMinifier(['background-color: rgba(12, 12, 12, 0.8);', 'background-color: rgb(12, 12, 12);', 'background-color: #FAFAFA;'],);
     minifierHex.shortHexMain();
     minifierHex.shortRGBMain();
     minifierHex.shortRGBAMain();
@@ -36,20 +36,20 @@ test('Hexadecimal Minify (controller/hexMinifier.js)', () => {
     expect(result).toBe('background-color: #0C0C0CCC;background-color: #111;background-color: #FFF;');
 });
 
-test('CSS Minify without commentRemover nor colorRemover (langDefaultMinifiers/cssMinifier.js)', () => {
+test('CSS Minify without commentRemover nor colorRemover (langMinifiers/cssMinifier.js)', () => {
     const cssMinify: CssMinifier = new CssMinifier(['@import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans");', '', '@media(max-width:850px) {', '    #tableRoot {', '        font-size: 120x;', '    }', '    #headRootPanel {', '        font-size: 12px;', '    }', '    .actionbuttons {', '        margin: 2px;', '    }', '}', '#login-block {', '    -webkit-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.4);', '    -moz-box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.4);', '    box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.4);', '    z-index: 2;', '}', '/*---------------------------------------------*/', 'h1,', 'h2{', '  margin: 0px;', '}',],);
     const result: string = cssMinify.getCssMinified();
     expect(result).toBe('@import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans");@media(max-width:850px){#tableRoot{font-size:120x}#headRootPanel{font-size:12px}.actionbuttons{margin:2px}}#login-block{-webkit-box-shadow:0 0 45px 0 rgba(0,0,0,.4);-moz-box-shadow:0 0 45px 0 rgba(0,0,0,.4);box-shadow:0 0 45px 0 rgba(0,0,0,.4);z-index:2;}/*---------------------------------------------*/h1,h2{margin:0;}');
 });
 
-test('HTML Minify with its own commentRemover but without colorRemover (langDefaultMinifiers/htmlMinifier.js)', () => {
+test('HTML Minify with its own commentRemover but without colorRemover (langMinifiers/htmlMinifier.js)', () => {
     const htmlMinify: HtmlMinifier = new HtmlMinifier(['<!DOCTYPE html>', '<html lang="es">', '', '<head>', '    <title></title>', '    <meta charset="utf-8">', '    <link rel="stylesheet" href="">', '    <script type="text/javascript" src=""></script>', '    <!-- test -->', '</head>', '', '<!-- ~~~~~✦✦✦✦✦ B O', ' D Y ✦✦✦✦✦~~~~~ -->', '<body>', '', '</body>', '', '</html>',],);
     htmlMinify.removeMultipleLineComments();
     const result: string = htmlMinify.getHtmlMinified();
     expect(result).toBe('<!DOCTYPE html><html lang="es"><head><title></title><meta charset="utf-8"><link rel="stylesheet" href=""><script type="text/javascript" src=""></script></head><body></body></html>');
 });
 
-test('JSON Minify without commentRemover nor colorRemover (langDefaultMinifiers/jsonMinifier.js)', () => {
+test('JSON Minify without commentRemover nor colorRemover (langMinifiers/jsonMinifier.js)', () => {
     const jsonMinify: JsonMinifier = new JsonMinifier(['{', '"contributes": {', '"commands": [{', '"title": "Minify this document ⚡",', '},', '{', '"color": "#FAFAFA", ', '}/* multiline comment', '*/', ']', '}', '}',],);
     const result: string = jsonMinify.getJSONMinified();
     expect(result).toBe('{"contributes":{"commands":[{"title":"Minify this document ⚡"},{"color":"#FAFAFA"}]}}');

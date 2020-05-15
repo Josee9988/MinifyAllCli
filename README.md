@@ -5,7 +5,7 @@ A simple package to minify your web **code**, _you will love its simplicity_!
 With MinifyAll you will be able to minify **.html**, **.css**, **.json** and **.jsonc** directly from the CLI.
 It also supports **minifying an entire directory recursively** (finding the available file extensions),
 you could also change the **suffix** of the new minified file (by default "-min"),
-toggle the minimization of **RGB**/**HEX** values, and _much more_! 
+toggle the minimization of **RGB**/**HEX** values and _much more_! 
 
 MinifyAll uses **regex** as its main and only minimization tool, that will lead to impressive minify times compared to other minifiers that deeply analyze the code.
 
@@ -48,7 +48,7 @@ npm i @josee9988/minifyall --save-dev # install the package globally
 
   ### **CLI usage**
   
-  **_minifyall --help_** will output:
+  **`minifyall --help`** or **`minifyall --help`** will output:
   
   ```
 MinifyAllCli v1.0.0
@@ -76,10 +76,11 @@ Examples of use:
 
 For more information visit: https://github.com/Josee9988/MinifyAllCli
   ```
-  
+
   ### **Package usage**
   
-  
+  [] Todo package usage
+
 ---
 
 ## **Built with**

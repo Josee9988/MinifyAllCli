@@ -1,8 +1,8 @@
-import {CssMinifier} from "./controller/langDefaultMinifiers/cssMinifier";
-import {JsonMinifier} from "./controller/langDefaultMinifiers/jsonMinifier";
-import {HtmlMinifier} from "./controller/langDefaultMinifiers/htmlMinifier";
-import {HexMinifier} from "./controller/hexMinifier";
-import {CommentRemover} from "./controller/commentRemover";
+import {CssMinifier} from "./controller/langMinifiers/cssMinifier";
+import {JsonMinifier} from "./controller/langMinifiers/jsonMinifier";
+import {HtmlMinifier} from "./controller/langMinifiers/htmlMinifier";
+import {ColorMinifier} from "./controller/colorMinifierController";
+import {CommentRemover} from "./controller/commentRemoverController";
 
 /**
  * MinifyAllClass contain functions that are used by multiple languages to be minified.
@@ -70,7 +70,7 @@ export class MinifyAllClass {
         let returnValue: string[];
 
         if (this.willMinifyHex) {
-            const hexMinifier: HexMinifier = new HexMinifier(content);
+            const hexMinifier: ColorMinifier = new ColorMinifier(content);
             // Minifier methods
             hexMinifier.shortHexMain();
             hexMinifier.shortRGBMain();
