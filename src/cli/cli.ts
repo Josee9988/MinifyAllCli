@@ -2,7 +2,7 @@ import {showHelp, showVersion} from './informationCLI';
 import {ArgumentsOptions, parseArgumentsIntoOptions} from "./argumentParser";
 import {createFile, findFilesInDir, readFileContent} from "../controller/fileController";
 import {displayException} from "./displayException";
-import {detectLanguageAndMinify} from "../index";
+import {detectLanguageAndMinify} from "../controller/detectLanguageAndMinify";
 
 /**
  * First function called from the bin/ folder when the user executes the CLI command.
