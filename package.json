@@ -44,7 +44,7 @@
     "preset": "ts-jest"
   },
   "author": "@Josee9988",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/Josee9988/MinifyAllCli/issues"
   },
