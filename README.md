@@ -84,7 +84,7 @@ For more information visit: https://github.com/Josee9988/MinifyAllCli
 1. Import the package.
   
       ```typescript
-    import {MinifyAllClass} from '@josee9988/minifyall/dist/index.js'; // import it
+    import {MinifyAllClass} from '@josee9988/minifyall'; // import it
       ```
 
 2. Initialize the minifier.
