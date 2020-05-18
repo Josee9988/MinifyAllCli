@@ -15,10 +15,9 @@ Check the **[website](https://minifyall.jgracia.es/)** or the original **[VSCode
 
 [![Version](https://badge.fury.io/js/%40josee9988%2Fminifyall.svg)](https://www.npmjs.com/package/@josee9988/minifyall)
 [![Downloads](https://img.shields.io/npm/dt/@josee9988/minifyall.svg)](https://www.npmjs.com/package/@josee9988/minifyall)
-[![License](https://img.shields.io/npm/l/@josee9988/minifyall.svg)](/LICENSE) 
 [![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/@josee9988/minifyall)](https://www.npmjs.com/package/@josee9988/minifyall)
+[![DeepScan grade](https://deepscan.io/api/teams/9121/projects/11596/branches/173509/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9121&pid=11596&bid=173509)
 [![npm bundle size (scoped version)](https://img.shields.io/bundlephobia/minzip/@josee9988/minifyall/1.0.0)](https://www.npmjs.com/package/@josee9988/minifyall)
-
 ---
 
 ## **Languages available** 🧪🔥
