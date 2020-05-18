@@ -1,6 +1,6 @@
 {
   "name": "@josee9988/minifyall",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A CLI tool to minify JSON/C, HTML and CSS.",
   "main": "dist/index.js",
   "bin": {
@@ -14,7 +14,7 @@
     "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "build": "tsc",
+    "build": "tsc && tsc -d --declarationDir dist/ --emitDeclarationOnly",
     "watch": "tsc -watch",
     "lint": "tslint -p tsconfig.json",
     "start": "node dist/index.js",
