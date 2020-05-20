@@ -16,8 +16,10 @@ Check the **[website](https://minifyall.jgracia.es/)** or the original **[VSCode
 [![Version](https://badge.fury.io/js/%40josee9988%2Fminifyall.svg)](https://www.npmjs.com/package/@josee9988/minifyall)
 [![Downloads](https://img.shields.io/npm/dt/@josee9988/minifyall.svg)](https://www.npmjs.com/package/@josee9988/minifyall)
 [![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/npm/@josee9988/minifyall)](https://www.npmjs.com/package/@josee9988/minifyall)
-[![DeepScan grade](https://deepscan.io/api/teams/9121/projects/11596/branches/173509/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9121&pid=11596&bid=173509)
 [![npm bundle size (scoped version)](https://img.shields.io/bundlephobia/minzip/@josee9988/minifyall/1.0.0)](https://www.npmjs.com/package/@josee9988/minifyall)
+[![DeepScan grade](https://deepscan.io/api/teams/9121/projects/11596/branches/173509/badge/grade.svg)](https://deepscan.io/dashboard/#view=project&tid=9121&pid=11596&bid=173509)
+[![Node.js CI](https://github.com/Josee9988/MinifyAllCli/workflows/Node.js%20CI/badge.svg)](https://github.com/Josee9988/MinifyAllCli/actions)
+
 ---
 
 ## **Languages available** 🧪🔥
@@ -108,6 +110,13 @@ For more information visit: https://github.com/Josee9988/MinifyAllCli
 * [TypeScript](https://www.typescriptlang.org/)
 * [npm](https://www.npmjs.com/)
 * [Github](https://github.com/Josee9988)
+
+---
+
+## **Contributing**
+
+This project is actively looking for new contributors to develop new functions, maintain and improve the project.
+If you are interested make sure to fork the project and pull-request your improvements to be added as a contributor!
 
 ---
 
