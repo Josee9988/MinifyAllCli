@@ -10,12 +10,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 
-* Deepscan badge.
+* DeepScan badge.
+* Github workflow actions to test on CI.
+* Github workflow badge.
+* Stale bot and configuration in the .github/ directory.
+* Issue templates.
+* package json script to remove the dist folder without outputting errors.
+* Contribution description in the readme.md file.
 
 ### Removed
 
-* Unnecesary await keyword in the fileControler test file.
+* Unnecessary await keyword in the fileControler test file.
 * License badge.
+* Excluded *.d.ts in the tsconfig file.
+
+### Fixed
+
+* Some typos in the changelog.md file.
+* Unused await keyword in the fileController test.
 
 ## [**1.1.0**] - 2020-05-18
 
@@ -27,7 +39,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 * Import of the module, from: `import {MinifyAllClass} from '@josee9988/minifyall/dist/index.js';` to `import { MinifyAllClass } from '@josee9988/minifyall';`
 
-[Published]
+## [Published]
 
 ## [**1.0.0**] - 2020-05-15
 
