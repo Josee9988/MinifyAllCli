@@ -4,6 +4,7 @@
 
 import {createFile, findFilesInDir, getNewFileName, readFileContent} from "../src/controller/fileController";
 import path from 'path';
+import os from 'os';
 
 test('GetNewFileName works', () => {
     const result: string = getNewFileName('/usr/local/etc/myCssFile.subName.css', '-minified');
@@ -33,7 +34,7 @@ test('readFileContent works', async () => {
 });
 
 test('createFile works', async () => {
-    createFile(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.css'), 'randomContent\na', '.min');
+    createFile(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.css'), 'randomContent' + os.EOL + 'a', '.min');
     const fileContentFromCreatedFile: string[] = await readFileContent(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.min.css'));
     expect(fileContentFromCreatedFile).toStrictEqual(['randomContent', 'a']);
 });

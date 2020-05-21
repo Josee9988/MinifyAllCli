@@ -11,12 +11,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Added
 
 * DeepScan badge.
-* Github workflow actions to test on CI.
+* Github workflow actions to test on CI (windows, macOs and ubuntu with node versions 13.x and 14.x).
 * Github workflow badge.
 * Stale bot and configuration in the .github/ directory.
 * Issue templates.
 * package json script to remove the dist folder without outputting errors.
 * Contribution description in the readme.md file.
+* Windows support in reading / creating files.
 
 ### Removed
 
@@ -28,6 +29,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 * Some typos in the changelog.md file.
 * Unused await keyword in the fileController test.
+* Package json scripts that didn't output error.
 
 ## [**1.1.0**] - 2020-05-18
 
