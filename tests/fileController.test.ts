@@ -35,5 +35,5 @@ test('readFileContent works', async () => {
 test('createFile works', async () => {
     createFile(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.css'), 'randomContent\na', '.min');
     const fileContentFromCreatedFile: string[] = await readFileContent(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.min.css'));
-    expect(fileContentFromCreatedFile).toStrictEqual(['randomContent', 'a']);
+    expect(fileContentFromCreatedFile.toString()).toStrictEqual(['randomContent', 'a'].toString());
 });
