@@ -29,11 +29,11 @@ test('FindFilesInDir works', async() => {
 
 test('readFileContent works', async () => {
     const result: string[] = await readFileContent(path.join(__dirname, '/../', 'tests/.exampleTestFiles/styles.css'));
-    expect(result).toStrictEqual([".myClass {", "    background-color: rgba(12, 12, 12, 0.8);", "    background-color: rgb(12, 12, 12);", "    background-color: #FAFAFA;", "    /*other comment*/", "    content: url(\"https://github.com/Josee9988/MinifyAll\");", "    margin-right: 0px;", "}/* my comment", "    */", ""]);
+    expect(result).toEqual([".myClass {", "    background-color: rgba(12, 12, 12, 0.8);", "    background-color: rgb(12, 12, 12);", "    background-color: #FAFAFA;", "    /*other comment*/", "    content: url(\"https://github.com/Josee9988/MinifyAll\");", "    margin-right: 0px;", "}/* my comment", "    */", ""]);
 });
 
 test('createFile works', async () => {
     createFile(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.css'), 'randomContent\na', '.min');
     const fileContentFromCreatedFile: string[] = await readFileContent(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.min.css'));
-    expect(fileContentFromCreatedFile).toStrictEqual(['randomContent', 'a']);
+    expect(fileContentFromCreatedFile).toEqual(['randomContent', 'a']);
 });
