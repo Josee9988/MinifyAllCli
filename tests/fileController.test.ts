@@ -4,6 +4,7 @@
 
 import {createFile, findFilesInDir, getNewFileName, readFileContent} from "../src/controller/fileController";
 import path from 'path';
+import os from 'os';
 
 test('GetNewFileName works', () => {
     const result: string = getNewFileName('/usr/local/etc/myCssFile.subName.css', '-minified');
@@ -29,11 +30,11 @@ test('FindFilesInDir works', async() => {
 
 test('readFileContent works', async () => {
     const result: string[] = await readFileContent(path.join(__dirname, '/../', 'tests/.exampleTestFiles/styles.css'));
-    expect(result).toEqual([".myClass {", "    background-color: rgba(12, 12, 12, 0.8);", "    background-color: rgb(12, 12, 12);", "    background-color: #FAFAFA;", "    /*other comment*/", "    content: url(\"https://github.com/Josee9988/MinifyAll\");", "    margin-right: 0px;", "}/* my comment", "    */", ""]);
+    expect(result).toStrictEqual([".myClass {", "    background-color: rgba(12, 12, 12, 0.8);", "    background-color: rgb(12, 12, 12);", "    background-color: #FAFAFA;", "    /*other comment*/", "    content: url(\"https://github.com/Josee9988/MinifyAll\");", "    margin-right: 0px;", "}/* my comment", "    */", ""]);
 });
 
 test('createFile works', async () => {
-    createFile(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.css'), 'randomContent\na', '.min');
+    createFile(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.css'), 'randomContent' + os.EOL + 'a', '.min');
     const fileContentFromCreatedFile: string[] = await readFileContent(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.min.css'));
-    expect(fileContentFromCreatedFile).toEqual(['randomContent', 'a']);
+    expect(fileContentFromCreatedFile).toStrictEqual(['randomContent', 'a']);
 });

@@ -17,6 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 * Issue templates.
 * package json script to remove the dist folder without outputting errors.
 * Contribution description in the readme.md file.
+* Windows support in reading / creating files.
 
 ### Removed
 

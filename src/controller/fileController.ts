@@ -2,6 +2,7 @@ import fs from 'fs';
 import {displayException} from "../cli/displayException";
 import Chalk from "chalk";
 import path from "path";
+import os from 'os';
 
 /**
  * Reads the content of a file.
@@ -10,12 +11,12 @@ import path from "path";
  */
 export function readFileContent(givenPath: string): Promise<string[]> {
     return new Promise((resolve, reject) => {
-        fs.readFile(givenPath, "utf8", (err, data) => {
+        fs.readFile(givenPath, {encoding: 'utf-8'}, (err, data) => {
             if (err) { // error found
                 reject(err);
                 displayException(404, 'could not read file '+givenPath, err.toString());
             }
-            resolve(data.toString().split("\n"));
+            resolve(data.toString().split(os.EOL));
         });
     });
 }
@@ -28,7 +29,7 @@ export function readFileContent(givenPath: string): Promise<string[]> {
  * @param suffix the suffix to be added to the new file name.
  */
 export function createFile(givenPath: string, content: string, suffix: string): void {
-    fs.writeFile(getNewFileName(givenPath, suffix), content, err => {
+    fs.writeFile(getNewFileName(givenPath, suffix), content, {encoding: 'utf-8'}, err => {
         if (err) {
             displayException(402, 'could not create new file '+givenPath, err.toString());
         }
