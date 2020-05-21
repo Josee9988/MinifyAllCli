@@ -19,7 +19,7 @@
     "watch": "tsc -watch",
     "lint": "tslint -p tsconfig.json",
     "start": "node dist/index.js",
-    "removeExtraExampleTestFile": "rm tests/.exampleTestFiles/testFile.min.css || exit 0",
+    "removeExtraExampleTestFile": "cat tests/.exampleTestFiles/ && rm -v tests/.exampleTestFiles/testFile.min.css || exit 0",
     "pretest": "npm run removeExtraExampleTestFile",
     "test": "jest --ci",
     "posttest": "npm run removeExtraExampleTestFile",
