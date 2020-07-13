@@ -28,7 +28,7 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): ArgumentsOptions {
         help: args['--help'] || false,
         version: args['--version'] || false,
         willMinifyHex: args['--minify-hex'] || false,
-        suffix: args['--suffix'] || '-min',
+        suffix: args['--suffix'] || '',
         output: args['--output'] || null,
         directory: args['--dir'] || null,
         file: args._[0],
