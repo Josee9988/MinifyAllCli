@@ -63,7 +63,7 @@ Global options:
   -h, --help              Output usage information. (will ignore any other arguments)
   -v, --version           Output package version. (will ignore any other arguments)
   -m, --minify-hex                Will minify the hexadecimal color values. (default = false)
-  -s, --suffix            The string of the suffix file. (default = "-min")
+  -s, --suffix            Append a suffix string to the minified filename
   -o, --output            The new output file (will ignore "--suffix" argument)
   -d, --dir               Will recursively look for HTML/CSS/JSON files inside a directory and will minify every one (will ignore "--output" argument)
 

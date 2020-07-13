@@ -13,7 +13,7 @@ test('parseArgumentsIntoOptions help argument works', () => {
         "file": undefined,
         "help": true,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -22,7 +22,7 @@ test('parseArgumentsIntoOptions help argument works', () => {
         "file": undefined,
         "help": true,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -38,7 +38,7 @@ test('parseArgumentsIntoOptions version argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": true,
         "willMinifyHex": false
     });
@@ -47,7 +47,7 @@ test('parseArgumentsIntoOptions version argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": true,
         "willMinifyHex": false
     });
@@ -63,7 +63,7 @@ test('parseArgumentsIntoOptions minify hex (colors) argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": true
     });
@@ -72,7 +72,7 @@ test('parseArgumentsIntoOptions minify hex (colors) argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": true
     });
@@ -89,7 +89,7 @@ test('parseArgumentsIntoOptions suffix argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -123,7 +123,7 @@ test('parseArgumentsIntoOptions output argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -132,7 +132,7 @@ test('parseArgumentsIntoOptions output argument works', () => {
         "file": undefined,
         "help": false,
         "output": '/myPath',
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -141,7 +141,7 @@ test('parseArgumentsIntoOptions output argument works', () => {
         "file": undefined,
         "help": false,
         "output": '/myPath/file.css',
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -157,7 +157,7 @@ test('parseArgumentsIntoOptions dir argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -166,7 +166,7 @@ test('parseArgumentsIntoOptions dir argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -175,7 +175,7 @@ test('parseArgumentsIntoOptions dir argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -190,7 +190,7 @@ test('parseArgumentsIntoOptions file argument works', () => {
         "file": undefined,
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
@@ -199,7 +199,7 @@ test('parseArgumentsIntoOptions file argument works', () => {
         "file": 'myFile.css',
         "help": false,
         "output": null,
-        "suffix": "-min",
+        "suffix": "",
         "version": false,
         "willMinifyHex": false
     });
