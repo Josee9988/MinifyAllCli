@@ -28,13 +28,17 @@ export function readFileContent(givenPath: string): Promise<string[]> {
  * @param content the content of the new file.
  * @param suffix the suffix to be added to the new file name.
  */
-export function createFile(givenPath: string, content: string, suffix: string): void {
-    fs.writeFile(getNewFileName(givenPath, suffix), content, {encoding: 'utf-8'}, err => {
-        if (err) {
-            displayException(402, 'could not create new file ' + givenPath, err.toString());
-        }
-        console.log(`${Chalk.bgGreen.bold.gray('SUCCESS!')}`);
-        console.log(`You can find your new minified file at: ${Chalk.bold.yellow.underline(getNewFileName(givenPath, suffix))}\n`);
+export function createFile(givenPath: string, content: string, suffix: string): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(getNewFileName(givenPath, suffix), content, {encoding: 'utf-8'}, err => {
+            if (err) {
+                reject(false);
+                displayException(402, 'could not create new file ' + givenPath, err.toString());
+            }
+            console.log(`${Chalk.bgGreen.bold.gray('SUCCESS!')}`);
+            console.log(`You can find your new minified file at: ${Chalk.bold.yellow.underline(getNewFileName(givenPath, suffix))}\n`);
+            resolve(true);
+        });
     });
 }
 

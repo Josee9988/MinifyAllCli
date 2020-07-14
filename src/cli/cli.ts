@@ -44,5 +44,5 @@ export async function startCommand(rawArgs: string[]): Promise<void> {
 export async function minifyAndWriteNewFile(filePath: string, willMinifyHex: boolean, suffix: string, newFilePath: string = filePath): Promise<void> {
     const content: string[] = await readFileContent(filePath);
     const minifiedCode = detectLanguageAndMinify(filePath, content, willMinifyHex);
-    createFile(newFilePath, minifiedCode, newFilePath !== filePath ? '' : suffix);
+    await createFile(newFilePath, minifiedCode, newFilePath !== filePath ? '' : suffix);
 }

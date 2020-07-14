@@ -6,7 +6,7 @@ import {createFile, findFilesInDir, getNewFileName, readFileContent} from "../sr
 import path from 'path';
 import os from 'os';
 
-test('GetNewFileName works', () => {
+test('GetNewFileName works', async () => {
     const result: string = getNewFileName('/usr/local/etc/myCssFile.subName.css', '-minified');
     const result2: string = getNewFileName('/usr/local/etc/myCssFile.subName-minified.css', '-minified');
     const result3: string = getNewFileName('/usr/local/etc/myCssFile.subName.css', '.min');
@@ -20,7 +20,10 @@ test('GetNewFileName works', () => {
 
 test('FindFilesInDir works', async () => {
     const result: string[] = findFilesInDir(path.join(__dirname, '/../', 'tests/.exampleTestFiles/'));
-    expect(result).toStrictEqual([
+    console.log(result)
+    const filteredResult = result.filter(item => item !== '/home/jose/Git/MinifyAllCli/tests/.exampleTestFiles/testFile.min.css');
+    console.log(filteredResult)
+    expect(filteredResult).toStrictEqual([
         path.join(__dirname, '/../', 'tests/.exampleTestFiles/', 'jsonCFile.jsonc'),
         path.join(__dirname, '/../', 'tests/.exampleTestFiles/', 'jsonFile.json'),
         path.join(__dirname, '/../', 'tests/.exampleTestFiles/', 'myWebpage.html'),
@@ -34,7 +37,7 @@ test('readFileContent works', async () => {
 });
 
 test('createFile works', async () => {
-    createFile(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.css'), 'randomContent' + os.EOL + 'a', '.min');
+    await createFile(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.css'), 'randomContent' + os.EOL + 'a', '.min');
     const fileContentFromCreatedFile: string[] = await readFileContent(path.join(__dirname, '/../', 'tests/.exampleTestFiles/testFile.min.css'));
     expect(fileContentFromCreatedFile).toStrictEqual(['randomContent', 'a']);
 });
