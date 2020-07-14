@@ -31,7 +31,7 @@ export function parseArgumentsIntoOptions(rawArgs: string[]): ArgumentsOptions {
         suffix: args['--suffix'] || '',
         output: args['--output'] || null,
         directory: args['--dir'] || null,
-        file: args._[0],
+        file: args._[0] || '',
     };
 }
 

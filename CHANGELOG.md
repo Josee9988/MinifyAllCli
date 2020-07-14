@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 ### Fixed
 
 * Test consistency and reliability as it sometimes failed because of async await problems.
+* Default value of the file is now ".", this will prevent the CLI from crashing.
 
 ### Changed
 

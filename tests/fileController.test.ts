@@ -20,9 +20,7 @@ test('GetNewFileName works', async () => {
 
 test('FindFilesInDir works', async () => {
     const result: string[] = findFilesInDir(path.join(__dirname, '/../', 'tests/.exampleTestFiles/'));
-    console.log(result)
     const filteredResult = result.filter(item => item !== '/home/jose/Git/MinifyAllCli/tests/.exampleTestFiles/testFile.min.css');
-    console.log(filteredResult)
     expect(filteredResult).toStrictEqual([
         path.join(__dirname, '/../', 'tests/.exampleTestFiles/', 'jsonCFile.jsonc'),
         path.join(__dirname, '/../', 'tests/.exampleTestFiles/', 'jsonFile.json'),

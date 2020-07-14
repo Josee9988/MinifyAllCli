@@ -10,7 +10,7 @@ test('parseArgumentsIntoOptions help argument works', () => {
 
     expect(resultHelp).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": true,
         "output": null,
         "suffix": "",
@@ -19,7 +19,7 @@ test('parseArgumentsIntoOptions help argument works', () => {
     });
     expect(resultHelpShort).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": true,
         "output": null,
         "suffix": "",
@@ -35,7 +35,7 @@ test('parseArgumentsIntoOptions version argument works', () => {
 
     expect(resultVersion).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -44,7 +44,7 @@ test('parseArgumentsIntoOptions version argument works', () => {
     });
     expect(resultVersionShort).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -60,7 +60,7 @@ test('parseArgumentsIntoOptions minify hex (colors) argument works', () => {
 
     expect(resultMinifyHex).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -69,7 +69,7 @@ test('parseArgumentsIntoOptions minify hex (colors) argument works', () => {
     });
     expect(resultMinifyHexShort).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -86,7 +86,7 @@ test('parseArgumentsIntoOptions suffix argument works', () => {
 
     expect(resultDefaultSuffix).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -95,7 +95,7 @@ test('parseArgumentsIntoOptions suffix argument works', () => {
     });
     expect(resultSuffix).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "minified",
@@ -104,7 +104,7 @@ test('parseArgumentsIntoOptions suffix argument works', () => {
     });
     expect(resultSuffixShort).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "minified",
@@ -120,7 +120,7 @@ test('parseArgumentsIntoOptions output argument works', () => {
 
     expect(resultDefaultOutput).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -129,7 +129,7 @@ test('parseArgumentsIntoOptions output argument works', () => {
     });
     expect(resultOutput).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": '/myPath',
         "suffix": "",
@@ -138,7 +138,7 @@ test('parseArgumentsIntoOptions output argument works', () => {
     });
     expect(resultOutputShort).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": '/myPath/file.css',
         "suffix": "",
@@ -154,7 +154,7 @@ test('parseArgumentsIntoOptions dir argument works', () => {
 
     expect(resultDefaultDir).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -163,7 +163,7 @@ test('parseArgumentsIntoOptions dir argument works', () => {
     });
     expect(resultDir).toStrictEqual({
         "directory": '/myPath',
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -172,7 +172,7 @@ test('parseArgumentsIntoOptions dir argument works', () => {
     });
     expect(resultDirShort).toStrictEqual({
         "directory": '/myPath',
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
@@ -187,7 +187,7 @@ test('parseArgumentsIntoOptions file argument works', () => {
 
     expect(resultDefaultFile).toStrictEqual({
         "directory": null,
-        "file": undefined,
+        "file": "",
         "help": false,
         "output": null,
         "suffix": "",
