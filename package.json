@@ -1,6 +1,6 @@
 {
   "name": "@josee9988/minifyall",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A CLI tool to minify JSON/C, HTML and CSS.",
   "main": "dist/index.js",
   "bin": {

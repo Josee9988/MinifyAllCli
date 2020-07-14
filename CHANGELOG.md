@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.2**] - 2020-05-21
+
+### Changed
+
+* Suffix argument changes its default value from "-min" to "" (blank string).
+
 ## [**1.1.1**] - 2020-05-21
 
 ### Added
