@@ -1,10 +1,15 @@
 import Chalk from 'chalk';
 
 /**
+ * Version that will be updated with the "versionUpdater.sh" script.
+ */
+const version = '1.1.2';
+
+/**
  * Summary: showVersion outputs the version of the package.
  */
 export function showVersion(): void {
-    console.log(Chalk.bold.gray('1.1.2'));
+    console.log(Chalk.bold.gray(version));
 }
 
 /**
@@ -12,7 +17,7 @@ export function showVersion(): void {
  * it outputs all the global options, usage, hints and some examples of use.
  */
 export function showHelp(): void {
-    console.log(Chalk.green('\nMinifyAllCli') + Chalk.gray(` v1.1.2`));
+    console.log(Chalk.green('\nMinifyAllCli') + Chalk.gray(` v${version}`));
 
     console.log(`\n${Chalk.bold('Usage')}: ${Chalk.yellow('minifyall')} ${Chalk.magenta('[file] [options]\n')}`);
 
