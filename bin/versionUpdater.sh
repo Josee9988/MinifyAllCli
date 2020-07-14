@@ -8,7 +8,8 @@
 # TITLE:         versionUpdater.sh
 # AUTHOR:        Jose Gracia
 # VERSION:       1.1.3
-# NOTES:         This script is automatically called by npm. THere is no need to manually run it.
+# NOTES:         This script is automatically called by npm when pre-publishing. There is no need to manually run it.
+#                When publishing, it should be done from the root directory of the repository.
 # BASH_VERSION:  5.0.16(1)-release
 # LICENSE:       see in ../LICENSE (project root) or https://github.com/Josee9988/MinifyAllCli/blob/master/LICENSE
 # GITHUB:        https://github.com/Josee9988/

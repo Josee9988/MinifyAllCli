@@ -10,7 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Added
 
-* Script to update the version of the package in the README.md file and in the informationCLI.ts file.
+* Script to update the version of the package in the README.md file and in the informationCLI.ts file automatically run on npm prepublish script.
 
 ## [**1.1.2**] - 2020-05-21
 
