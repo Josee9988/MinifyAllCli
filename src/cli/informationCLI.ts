@@ -3,13 +3,13 @@ import Chalk from 'chalk';
 /**
  * Version that will be updated with the "versionUpdater.sh" script.
  */
-const version = '1.1.3';
+const version = '1.1.4';
 
 /**
  * Summary: showVersion outputs the version of the package.
  */
 export function showVersion(): void {
-    console.log(Chalk.bold.gray(version));
+    console.log(`MinifyAllCLI version ${Chalk.bold.gray(version)}`);
 }
 
 /**

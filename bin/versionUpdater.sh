@@ -30,6 +30,8 @@ PACKAGE_VERSION=$(cat package.json \
   | awk -F: '{ print $2 }' \
   | sed 's/[",\t ]//g')
 
-# replaces the outdated version to the new version from the informationCLI.ts and README.md file.
+# replaces the outdated version to the new version from the
+# informationCLI.ts, informationalArguments.test.ts and README.md file.
 sed -i -e "s/$VERSION_TO_UPDATE/$PACKAGE_VERSION/g" src/cli/informationCLI.ts
 sed -i -e "s/$VERSION_TO_UPDATE/$PACKAGE_VERSION/g" README.md
+sed -i -e "s/$VERSION_TO_UPDATE/$PACKAGE_VERSION/g" tests/informationalArguments.test.ts
