@@ -9,7 +9,7 @@ const version = '1.1.3';
  * Summary: showVersion outputs the version of the package.
  */
 export function showVersion(): void {
-    console.log(Chalk.bold.gray(version));
+    console.log(`MinifyAllCLI version ${Chalk.bold.gray(version)}`);
 }
 
 /**
