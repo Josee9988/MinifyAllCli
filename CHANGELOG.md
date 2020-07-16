@@ -6,7 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
-## [Unreleased]
+## [**1.1.4**] - 2020-07-16
+
+### Added
+
+* Tests case to test the showVersion and showHelp arguments (informationalArguments.test.ts).
+* VersionUpdater.sh now also updates the informationalArguments.test.ts file.
+* npmg git hook to run versionUpdater before each commit to ensure all the versions strings are up to date.
+
+## [**1.1.3**] - 2020-07-14
 
 ### Added
 
