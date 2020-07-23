@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.5**] - 2020-07-23
+
+### Fixed
+
+* Issue #43 (JSON minifier was removing a space after a comma).
+
+### Improved
+
+* Multiple other JSON improvements to try to remove the more spaces possible without removing spaces inside a text string.
+
+### Added
+
+* Test file to only test JSON/C code.
+
+
 ## [**1.1.4**] - 2020-07-16
 
 ### Added
