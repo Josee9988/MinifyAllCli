@@ -29,7 +29,7 @@ export class JsonMinifier {
      *
      * Description the method will get the array with all the lines and will
      * make one String out of all of them; Then it will use REGEX
-     * to replace multiple concurrencies, like removing multiple spaces,
+     * to replace multiple concurrences, like removing multiple spaces,
      * unnecessary tabulations and specific things per each language.
      *
      * @return  the line minified.
@@ -40,10 +40,12 @@ export class JsonMinifier {
             .replace(/\s{2}/g, '')
             .replace(/ {/g, '{')
             .replace(/[\t]/g, '')
-            .replace(/,}/g, '}')
-            .replace(/,]/g, ']')
-            .replace(/\s\,/g, ',')// remove space before a comma ( ,) -> (,)
-            .replace(/\,\s/g, ',')// remove space after a comma (, ) -> (,)
+            .replace(/,\s}/g, '}') // remove space after a comma (, }) -> (,})
+            .replace(/,\s]/g, ']') // remove space after a comma (, ]) -> (,])
+            .replace(/,}/g, '}') // removes useless comma (,}) -> (})
+            .replace(/,]/g, ']') // removes useless comma (,]) -> (])
+            .replace(/{\s,/g, '}') // remove space before a comma ({ ,) -> ({,)
+            .replace(/{\s,/g, ']') // remove space before a comma ([ ,) -> ([,)
             .replace(/", /g, '",');
     }
 }
