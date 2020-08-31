@@ -41,8 +41,16 @@ export class CssMinifier {
             .replace(/;? }/g, '}') // remove space (and semicolon if present) preceding }
             // removes space before or after these chars
             .replace(/ ?([;{}!,>]) ?| ([)])|([:(]) /g, '$1$2$3')
+
+            // allow 0px when they have a operation sign before or after.
+            .replace(/([-|+|*|\/|%]0px|[-|+|*|\/|%]\s0px)/g, '$10px')
+            .replace(/(0px\s[-|+|*|\/|%]|0px[-|+|*|\/|%])/g, '0px$1')
+
             // remove units from 0 that are allowed to be omitted
             .replace(/(\b0)(?:\.0+)?(?:r?e[mx]|p[xtc]|[chm]{2}|in|v(?:h|w|min|max))/gi, '$1')
+
+            // remove error caused by the replace regex: "allow 0px when they have a operation sign before or after."
+            .replace(/00px/g, '0px')
             .replace(/\b0(\.\d+)/g, '$1'); // remove any prefixed 0 from decimal values
     }
 }
