@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.7**] - 2020-09-01
+
+### Fixed
+
+* 00px was always transformed to 0px. So 1200px would be minified to 120px. It is fixed now, as MinifyAll searches if the previous character is a number or not.
+
 ## [**1.1.6**] - 2020-08-31
 
 ### Fixed

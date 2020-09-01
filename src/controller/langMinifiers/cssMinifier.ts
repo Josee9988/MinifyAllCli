@@ -50,7 +50,7 @@ export class CssMinifier {
             .replace(/(\b0)(?:\.0+)?(?:r?e[mx]|p[xtc]|[chm]{2}|in|v(?:h|w|min|max))/gi, '$1')
 
             // remove error caused by the replace regex: "allow 0px when they have a operation sign before or after."
-            .replace(/00px/g, '0px')
+            .replace(/([^0-9])00px/g, '$10px')
             .replace(/\b0(\.\d+)/g, '$1'); // remove any prefixed 0 from decimal values
     }
 }
