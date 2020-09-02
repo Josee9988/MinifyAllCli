@@ -51,6 +51,8 @@ export class CssMinifier {
 
             // remove error caused by the replace regex: "allow 0px when they have a operation sign before or after."
             .replace(/([^0-9])00px/g, '$10px')
+            .replace(/px0px/g, 'px')
+
             .replace(/\b0(\.\d+)/g, '$1'); // remove any prefixed 0 from decimal values
     }
 }

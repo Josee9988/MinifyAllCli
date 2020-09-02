@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.8**] - 2020-09-02
+
+### Fixed
+
+* Issue #49. A px number with a sign which ends with 0 was appended with 0px. ex: +1200px to +1200px0px
+
 ## [**1.1.7**] - 2020-09-01
 
 ### Fixed
