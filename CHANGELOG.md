@@ -10,7 +10,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ### Fixed
 
-* Removed paces at the beginning or the end of the minified code.
+* Removed paces at the beginning, or the end of the minified code.
+* Dependency errors by updating them
 
 ## [**1.1.8**] - 2020-09-02
 
