@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.9**] - 2021-02-23
+
+### Fixed
+
+* Removed paces at the beginning or the end of the minified code.
+
 ## [**1.1.8**] - 2020-09-02
 
 ### Fixed

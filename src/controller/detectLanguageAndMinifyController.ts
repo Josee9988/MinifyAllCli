@@ -12,12 +12,12 @@ export function detectLanguageAndMinify(path: string, content: string[], willMin
     const minifier: MinifyAllClass = new MinifyAllClass(willMinifyHex);
     switch (path.substr(path.lastIndexOf('.'), path.length)) {
         case LanguagesEnum.HTML:
-            return minifier.minifyHtml(content);
+            return minifier.minifyHtml(content).trim();
         case LanguagesEnum.CSS:
-            return minifier.minifyCssScssLessSass(content);
+            return minifier.minifyCssScssLessSass(content).trim();
         case LanguagesEnum.JSON:
         case LanguagesEnum.JSONC:
-            return minifier.minifyJsonJsonc(content);
+            return minifier.minifyJsonJsonc(content).trim();
         default:
             displayException(403, 'file extension not recognized', path);
             break;
