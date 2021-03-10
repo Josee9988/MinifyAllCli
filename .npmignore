@@ -1,4 +1,5 @@
 # Folders
+.github
 src/
 .idea/
 tests/
@@ -6,3 +7,6 @@ tests/
 # Files
 tsconfig.json
 tslint.json
+bin/README.md
+bin/versionUpdater.sh
+CHANGELOG.md

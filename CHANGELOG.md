@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.10**] - 2021-03-10
+
+### Changed
+
+* Updated npm packages.
+
+### Added
+
+* Some files and directories to the '.npmignore' file, to reduce the bundle size.
+
 ## [**1.1.9**] - 2021-02-23
 
 ### Fixed
