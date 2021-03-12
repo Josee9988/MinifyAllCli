@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.11**] - 2021-03-11
+
+### Added
+
+* Uglify package to minimize all the dist .js files.
+
 ## [**1.1.10**] - 2021-03-10
 
 ### Changed

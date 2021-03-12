@@ -1,6 +1,6 @@
 {
   "name": "@josee9988/minifyall",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "A CLI tool to minify JSON/C, HTML and CSS.",
   "main": "dist/index.js",
   "bin": {
@@ -17,7 +17,7 @@
     "prepublish": "npm run rmDist && npm run prepare",
     "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
-    "build": "tsc && tsc -d --declarationDir dist/ --emitDeclarationOnly",
+    "build": "tsc && tsc -d --declarationDir dist/ --emitDeclarationOnly && npm run uglifyjs",
     "watch": "tsc -watch",
     "lint": "tslint -p tsconfig.json",
     "start": "node dist/index.js",
@@ -26,6 +26,7 @@
     "test": "jest --ci",
     "posttest": "npm run removeExtraExampleTestFile",
     "removeExtraExampleTestFiles": "cd tests/.exampleTestFiles && rm -v !('jsonCFile.jsonc'|'jsonFile.json'|'styles.css'|'myWebpage.html') && cd ../..",
+    "uglifyjs": "uglifyjs-folder dist -e -o dist -x .js",
     "testPack": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
     "versionUpdater": "echo 'running versionUpdater...' && bash bin/versionUpdater.sh"
   },
@@ -60,7 +61,8 @@
     "pre-commit": "^1.2.2",
     "ts-jest": "^25.5.1",
     "tslint": "^6.1.2",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.2",
+    "uglifyjs-folder": "^2.0.0"
   },
   "dependencies": {
     "arg": "^4.1.3",
