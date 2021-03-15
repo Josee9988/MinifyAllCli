@@ -54,7 +54,7 @@ npm i @josee9988/minifyall --save-dev # install the package globally
 **`minifyall --help`** or **`minifyall --help`** will output:
   
   ```
-MinifyAllCli v1.1.11
+MinifyAllCli v1.1.12
 
 Usage: minifyall [file] [options]
 
