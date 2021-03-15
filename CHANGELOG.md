@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.12**] - 2021-03-15
+
+### Removed
+
+* Spaced after a colon to close the issue #57 (this colon-space removal was probably copied from the css minifier)
+
 ## [**1.1.11**] - 2021-03-11
 
 ### Added

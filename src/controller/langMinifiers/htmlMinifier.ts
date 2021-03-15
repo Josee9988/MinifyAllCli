@@ -37,7 +37,7 @@ export class HtmlMinifier {
      */
     public getHtmlMinified(): string {
         return this.htmlContent.join('').replace(/;\}|\s+}/g, '}')
-            .replace(/\/\*.*?\*\//g, '').replace(/:\s/g, ':')
+            .replace(/\/\*.*?\*\//g, '')
             .replace(/ {/g, '{') // removes spaces before a '{'
             .replace(/[\t]/g, '') // removes any tab character
             .replace(/[\s\s]{2,}/g, ' ') // removes two whitespaces into 1
