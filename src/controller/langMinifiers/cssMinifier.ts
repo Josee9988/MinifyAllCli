@@ -55,7 +55,8 @@ export class CssMinifier {
 
             .replace(/\s:/g, ':') // remove useless space before a colon ( :) -> (:)
 
-            .replace(/0%/g, '0') // from 0% to just 0
+            .replace(/:0%/g, ':0') // from :0% to just :0
+            .replace(/\(:0%/g, '(0') // from (0% to just :0
 
             .replace(/\b0(\.\d+)/g, '$1'); // remove any prefixed 0 from decimal values
     }
