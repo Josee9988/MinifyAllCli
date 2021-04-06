@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.13**] - 2021-04-06
+
+### Added
+
+* CSS now removes space after a colon ":", and 0% gets transformed into just "0" to fix issue #59.
+
 ## [**1.1.12**] - 2021-03-15
 
 ### Removed
