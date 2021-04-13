@@ -6,7 +6,7 @@
 import {startCommand} from "../src/cli/cli";
 import Chalk from 'chalk';
 
-const version = '1.1.15';
+const version = '1.1.16';
 
 
 test('showVersion console logs the right version ', () => {

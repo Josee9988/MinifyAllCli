@@ -35,7 +35,7 @@ export class ColorMinifier {
             if (hexadecimal !== null && hexadecimal.toString().length === 7) {
                 const hexadecimalString: string = hexadecimal.toString();
                 const shortHex: string = this.getShortHexColorCode(hexadecimalString);
-                this.cssContent[i] = this.cssContent[i].replace(hexadecimalString, shortHex);
+                if (shortHex !== null) this.cssContent[i] = this.cssContent[i].replace(hexadecimalString, shortHex);
             }
         }
     }
@@ -54,8 +54,10 @@ export class ColorMinifier {
             if (rgb !== null) {
                 const rgbString: string = rgb.toString();
                 const result: any = this.rgbArrayToObject(rgbString);
-                const shortHex: string = this.rgbToShortHex(result);
-                this.cssContent[i] = this.cssContent[i].replace(rgbString, shortHex);
+                if (result !== null) {
+                    const shortHex: string = this.rgbToShortHex(result);
+                    this.cssContent[i] = this.cssContent[i].replace(rgbString, shortHex);
+                }
             }
         }
     }
@@ -178,10 +180,14 @@ export class ColorMinifier {
      * @param rgb object with red, green and blue values.
      */
     public rgbToShortHex(rgb: any): string {
-        const hexR: string = Math.round(rgb.r / 17).toString(16);
-        const hexG: string = Math.round(rgb.g / 17).toString(16);
-        const hexB: string = Math.round(rgb.b / 17).toString(16);
-        return `#${hexR}${hexG}${hexB}`;
+        try {
+            const hexR: string = Math.round(rgb.r / 17).toString(16);
+            const hexG: string = Math.round(rgb.g / 17).toString(16);
+            const hexB: string = Math.round(rgb.b / 17).toString(16);
+            return `#${hexR}${hexG}${hexB}`;
+        } catch (e) {
+            return rgb;
+        }
     }
 
     /**

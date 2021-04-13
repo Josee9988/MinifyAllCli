@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.1.16**] - 2021-04-13
+
+### Added
+
+* Try-catch clause if the rgb/a color minifier couldn't be performed.
+* Multiple checks to not minify colours if the result isn't valid.
+
 ## [**1.1.14**] - 2021-04-07
 
 ### Fixed
