@@ -1,6 +1,11 @@
+###> Josee9988/MinifyAllCli ###
 # Folders
 node_modules/
 .idea/
 dist/
 
 # Files
+.vscode/
+.idea/
+*.ignore.*
+###< Josee9988/MinifyAllCli ###
