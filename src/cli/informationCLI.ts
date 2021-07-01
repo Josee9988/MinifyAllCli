@@ -3,7 +3,7 @@ import Chalk from 'chalk';
 /**
  * Version that will be updated with the "versionUpdater.sh" script.
  */
-const version = '1.1.16';
+const version = '1.2.1';
 
 /**
  * Summary: showVersion outputs the version of the package.
