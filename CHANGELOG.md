@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 
 
 ---
 
+## [**1.2.2**] - 2021-07-01
+
+### Fixed
+
+* Some issues with the preserve license
+
 ## [**1.2.1**] - 2021-07-01
 
 ### Changed
