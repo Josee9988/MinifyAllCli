@@ -26,7 +26,7 @@ export class MinifyAllClass {
         const removeComments: string[] = this.removeComments(cssContent);
         const hexMinifiedCss: string[] = this.HexMinify(removeComments);
         const minifierCss: CssMinifier = new CssMinifier(hexMinifiedCss);
-        return minifierCss.getCssMinified();
+        return minifierCss.getCssMinified().replace(/@@minifyallspace@@,/g, '\n').replace(/@@minifyallspace@@/g, '\n')
     }
 
     /**
@@ -38,7 +38,7 @@ export class MinifyAllClass {
         const contentWithHexMinified: string[] = this.HexMinify(jsonContent);
         const removeComments: string[] = this.removeComments(contentWithHexMinified);
         const minifierJson: JsonMinifier = new JsonMinifier(removeComments);
-        return minifierJson.getJSONMinified();
+        return minifierJson.getJSONMinified().replace(/@@minifyallspace@@,/g, '\n').replace(/@@minifyallspace@@/g, '\n');
     }
 
     /**

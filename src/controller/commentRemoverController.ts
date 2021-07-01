@@ -41,13 +41,26 @@ export class CommentRemover {
      * This method is only a for with a method call.
      */
     public removeCommentsMain(): void {
+        let willPreserveComment: boolean = false;
+        const toAddContent: string[] = [];
+        let toAddContentCounter: number = 0;
         // Remove multiline comments in the same line
         for (let i = 0; i < this.lineContent.length; i++) {
-            this.lineContent[i] = this.lineContent[i].replace(/\/\*([\s\S]*?)\*\//g, '');
+            if (this.lineContent[i].includes('@preserve')) { // start preserving
+                willPreserveComment = true;
+                toAddContent[toAddContentCounter] = this.lineContent[i].replace(/@preserve/g, '') + '@@minifyallspace@@';
+                toAddContentCounter++;
+            } else if (willPreserveComment) { // continue preserving
+                toAddContent[toAddContentCounter] = this.lineContent[i] + '@@minifyallspace@@';
+                toAddContentCounter++;
+            } else if (this.lineContent[i].includes('@endpreserve')) { // stop preserving
+                willPreserveComment = false;
+                toAddContent[toAddContentCounter] = this.lineContent[i].replace(/@endpreserve/g, '') + '@@minifyallspace@@';
+                this.lineContent[i] = this.lineContent[i].replace(/\/\*([\s\S]*?)\*\//g, '');
+            }
         }
-
-        const lineContentString: string = this.removeComments(this.lineContent.join('\n'));
-
+        let lineContentString: string = this.removeComments(this.lineContent.join('\n'));
+        lineContentString = toAddContent + lineContentString;
         this.lineContent = lineContentString.split('\n');
     }
 

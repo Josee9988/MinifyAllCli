@@ -5,7 +5,7 @@ A simple package to minify your web **code**, _you will love its simplicity_!
 With MinifyAll you will be able to minify **.html**, **.css**, **.json** and **.jsonc** directly from the CLI.
 It also supports **minifying an entire directory recursively** (finding the available file extensions),
 you could also change the **suffix** of the new minified file (by default "-min"),
-toggle the minimization of **RGB**/**HEX** values and _much more_! 
+toggle the minimization of **RGB**/**HEX** values, preserve license comments and _much more_! 
 
 Use it as a **CLI command** or as a **normal package**!
 
