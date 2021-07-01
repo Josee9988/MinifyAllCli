@@ -46,17 +46,17 @@ export class CommentRemover {
         let toAddContentCounter: number = 0;
         // Remove multiline comments in the same line
         for (let i = 0; i < this.lineContent.length; i++) {
-            if (this.lineContent[i].includes('@preserve')) { // start preserving
+            if (this.lineContent[i].match(/@preserve/g) !== null) { // start preserving
                 willPreserveComment = true;
                 toAddContent[toAddContentCounter] = this.lineContent[i].replace(/@preserve/g, '') + '@@minifyallspace@@';
                 toAddContentCounter++;
-            } else if (willPreserveComment) { // continue preserving
+            } else if (this.lineContent[i].match(/@endpreserve/g) !== null) { // stop preserving
+                willPreserveComment = false;
+                toAddContent[toAddContentCounter + 1] = this.lineContent[i + 1];
+                this.lineContent[i] = this.lineContent[i].replace(/\/\*([\s\S]*?)\*\//g, '');
+            } else if (willPreserveComment === true) { // continue preserving
                 toAddContent[toAddContentCounter] = this.lineContent[i] + '@@minifyallspace@@';
                 toAddContentCounter++;
-            } else if (this.lineContent[i].includes('@endpreserve')) { // stop preserving
-                willPreserveComment = false;
-                toAddContent[toAddContentCounter] = this.lineContent[i].replace(/@endpreserve/g, '') + '@@minifyallspace@@';
-                this.lineContent[i] = this.lineContent[i].replace(/\/\*([\s\S]*?)\*\//g, '');
             }
         }
         let lineContentString: string = this.removeComments(this.lineContent.join('\n'));
