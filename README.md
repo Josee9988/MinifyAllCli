@@ -36,7 +36,7 @@ Check the **[website](https://minifyall.jgracia.es/)** or the original **[VSCode
   ### **Global installation**
 
 ```bash
-npm i @josee9988/minifyall --save-dev # install the package globally
+npm i -g @josee9988/minifyall # install the package globally
 ```
 
   ### **Package installation**
